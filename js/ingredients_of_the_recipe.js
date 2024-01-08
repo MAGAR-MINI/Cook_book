@@ -145,9 +145,9 @@ function print_data(id) {
             left_components.className = "left_components";
             component_container.appendChild(left_components)
 
-            var num = data['extendedIngredients'].length;
+            var data_length = data['extendedIngredients'].length;
 
-            for (var i = 0; i < num; i++) {
+            for (var i = 0; i < data_length; i++) {
                 console.log(data);
 
                 var components = document.createElement("div");
@@ -160,7 +160,7 @@ function print_data(id) {
                 var originalName = data['extendedIngredients'][i]['originalName'];
 
                 components.innerHTML = amount + " " + unit + " " + originalName;
-                if (i < num / 2) {
+                if (i < data_length / 2) {
                     right_components.appendChild(components);
                 }
                 else {
@@ -215,7 +215,7 @@ function print_data(id) {
                     button_shoping_list.className = "button_shoping_list";
                     button_shoping_list.innerHTML = "ADD TO SHOPING LIST";
                     button_shoping_list.addEventListener('click', function () {
-                        shoping_list((num), (data), (diners));
+                        shoping_list((data_length), (data), (diners));
                     })
                     div_add_to_shoping_list.appendChild(button_shoping_list);
 
