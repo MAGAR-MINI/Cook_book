@@ -1,0 +1,39 @@
+/* .results {
+    overflow: auto;
+} */
+
+.food_div {
+    display: flex;
+    background-color:white;
+    height: 100px;
+    width: 100%;
+    border: none;
+}
+
+.food_div:hover{
+    background-color:#f9f5f3; /*משנה צבע שהעכבר על האלמנט*/
+}
+
+.picture_food {
+    width : 60px;
+    height : 60px;
+    padding: 25px 25px 25px 25px;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.title_for_food {
+    padding: 35px 20px 0 0;
+    margin: 0;
+    color:#f38e82;
+    font-family: Calibri;
+}
+
+.description_of_food {
+    padding: 0 20px 0 0;
+    margin: 0;
+    font-family: Calibri;
+}
+
+
+

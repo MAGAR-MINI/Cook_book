@@ -1,0 +1,25 @@
+.favorite_food {
+    position: absolute;
+    top: 185px;
+    right: 70px;
+    background-color: #fff;
+    padding-bottom: 0 0 70px 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.favorite_container {
+    display: flex;
+    justify-content: flex-end
+}
+
+.button_favorite_food {
+    border: none;
+    background-color: #f9f5f3;
+    margin-right: 20px;
+}
+
+.heart-fill {
+    fill: #f38e82;
+    background-color: #f9f5f3;
+}

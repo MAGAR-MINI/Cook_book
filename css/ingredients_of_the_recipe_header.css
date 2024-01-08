@@ -1,0 +1,105 @@
+/* .ingredients_of_recipe_container_main {
+    overflow: auto;
+} */
+
+.picture_recipe {
+    width: 100%;
+}
+
+.div_header_container {
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    background-color: #f9f5f3;
+}
+
+.ready_in_minutes,
+.servings,
+.svg_clock,
+.svg_man {
+    display: inline;
+}
+
+.ready_in_minutes,
+.servings {
+    margin-left: 5px;
+    font-family: Calibri;
+}
+
+.container_time{
+    flex-basis: 30%; 
+}
+
+.svg_clock {
+    width: 16px;
+    height: 16px;
+    margin-left: 50px;
+    fill: #f38e82;
+}
+
+.container_number_diners{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%; 
+}
+
+.svg_man {
+    width: 16px;
+    height: 16px;
+    margin-left: 30px;
+    fill: #f38e82;
+}
+
+.div_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_button {
+    margin-left: 10px;
+    border: 2px solid #f38e82;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    background-color: #f9f5f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove_button {
+    margin-left: 5px;
+    border: 2px solid #f38e82;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    background-color: #f9f5f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_favourite_food {
+    display: flex;
+    flex-basis: 20%;
+    justify-content: flex-end;
+}
+
+.button_add_favorite_to_list {
+    background-color: #f9f5f3;
+    border: none;
+    padding: 0;
+}
+
+.svg_heart {
+    width: 33px;
+    height: 30px;
+    margin-right: 50px;
+    fill: #f38e82;
+    background-color: #f9f5f3;
+}
+
+.svg_heart path {
+    transform: scale(2);
+}
