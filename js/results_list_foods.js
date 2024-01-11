@@ -9,14 +9,20 @@ function list_foods() {
         .then(data => {
             var result = data['results'];
 
-            const container_results = document.getElementById('results_main');
-
             document.getElementById("results").remove();
 
             var results = document.createElement('div');
             results.className = 'results';
             results.id = 'results';
-            container_results.appendChild(results);
+            document.getElementById('results_main').appendChild(results);
+
+            if (result.length == 0) {
+
+                var error = document.createElement("h2");
+                error.className = "error";
+                error.innerHTML = "No results"
+                results.appendChild(error);
+            }
 
             for (let i = 0; i < result.length; i++) {
 
@@ -31,7 +37,7 @@ function list_foods() {
                 // יצירת תגית תמונה
                 var imgElement = document.createElement("img");
                 imgElement.src = result[i].image;
-                imgElement.className = "picture_food";       
+                imgElement.className = "picture_food";
                 divElement.appendChild(imgElement);
 
                 //יצירת תגית כללית לתיאור
@@ -50,21 +56,11 @@ function list_foods() {
                 divText.className = "description_of_food";
                 divText.innerHTML = result[i].title;
                 divForText.appendChild(divText);
+
+
             }
         })
         .catch(error => {
             console.error('Error:', error);
         });
-}
-
-
-var arr = [{id:1,name:"s"},{id:2,name:"s"},{id:3,name:"s"}];
-getobjbyid(arr,1);
-function getobjbyid(arr,id){
-    for (var i = 0; i<arr.length; i++){
-        if(arr[i].id == id){
-            return arr[i];
-        }
-        // else()
-    }
 }

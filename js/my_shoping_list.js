@@ -1,10 +1,10 @@
-function shoping_list(data_length, data, diners) {
+function shoping_list(component_length, data, diners) {
     var title_my_shopping_list = document.createElement("h1");
     title_my_shopping_list.className = "title_my_shopping_list";
     title_my_shopping_list.innerHTML = "My shopping List";
     document.getElementById('my_shopping_list').appendChild(title_my_shopping_list);
 
-    for (var i = 0; i < data_length; i++) {
+    for (var i = 0; i < component_length; i++) {
 
         // יצירת div 
         var shoping_element = document.createElement("div");

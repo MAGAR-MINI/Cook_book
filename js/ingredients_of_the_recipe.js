@@ -4,21 +4,20 @@
 function print_data(id) {
     //var api1 = ""d126c37ec30f4a7ba1c66d465d0bc783"
     //var api2 = 762ab72f2d674ae8a2950ef195435ced
-    // var api = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false&apiKey=762ab72f2d674ae8a2950ef195435ced";
+    //var api = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false&apiKey=762ab72f2d674ae8a2950ef195435ced";
     var api = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false&apiKey=d126c37ec30f4a7ba1c66d465d0bc783";
 
     fetch(api)
         .then(response => response.json())
         .then(data => {
 
-            const ingredients_of_recipe_container_main = document.getElementById("ingredients_of_recipe_container_main");
 
             document.getElementById("ingredients_of_recipe_container").remove();
 
             var ingredients_of_recipe_container = document.createElement("div"); //מיכל_מרכיבים_של_מתכון
             ingredients_of_recipe_container.className = "ingredients_of_recipe_container";
             ingredients_of_recipe_container.id = "ingredients_of_recipe_container";
-            ingredients_of_recipe_container_main.appendChild(ingredients_of_recipe_container);
+            document.getElementById("ingredients_of_recipe_container_main").appendChild(ingredients_of_recipe_container);
 
             // תמונה של המתכון
             var imgElement = document.createElement("img");
@@ -72,7 +71,7 @@ function print_data(id) {
             servings.className = "servings";
             container_number_diners.appendChild(servings);
 
-            // div לכפתורים
+            // לבדוק עם הDIV נחוץ// div לכפתורים
             var div_buttons = document.createElement("div");
             div_buttons.className = "div_buttons";
             container_number_diners.appendChild(div_buttons);
@@ -107,8 +106,10 @@ function print_data(id) {
             var button_add_favorite_to_list = document.createElement("button");
             button_add_favorite_to_list.className = "button_add_favorite_to_list";
             button_add_favorite_to_list.addEventListener('click', function () {
-                //להשלים את הפונקציה 
-            });
+
+                arr_favorite.push(data)
+            })
+
             container_favourite_food.appendChild(button_add_favorite_to_list);
 
             // הוספת תמונת לב
@@ -144,12 +145,11 @@ function print_data(id) {
             var left_components = document.createElement("div");
             left_components.className = "left_components";
             component_container.appendChild(left_components)
+            
+            var component_length = data['extendedIngredients'].length;
 
-            var data_length = data['extendedIngredients'].length;
-
-            for (var i = 0; i < data_length; i++) {
-                console.log(data);
-
+            for (var i = 0; i < component_length; i++) {
+                
                 var components = document.createElement("div");
                 components.className = "components";
                 components.id = "components_" + i;
@@ -160,7 +160,7 @@ function print_data(id) {
                 var originalName = data['extendedIngredients'][i]['originalName'];
 
                 components.innerHTML = amount + " " + unit + " " + originalName;
-                if (i < data_length / 2) {
+                if (i < component_length / 2) {
                     right_components.appendChild(components);
                 }
                 else {
@@ -171,7 +171,7 @@ function print_data(id) {
 
             // רמת הטעם של המתכון מורכבת ממספר (1 עד 100)
             var newApi = "https://api.spoonacular.com/recipes/" + id + "/tasteWidget.json?apiKey=d126c37ec30f4a7ba1c66d465d0bc783";
-            // var newApi = "https://api.spoonacular.com/recipes/" + id + "/tasteWidget.json?apiKey=762ab72f2d674ae8a2950ef195435ced";
+            //var newApi = "https://api.spoonacular.com/recipes/" + id + "/tasteWidget.json?apiKey=762ab72f2d674ae8a2950ef195435ced";
 
             fetch(newApi)
                 .then(response => response.json())
@@ -215,7 +215,7 @@ function print_data(id) {
                     button_shoping_list.className = "button_shoping_list";
                     button_shoping_list.innerHTML = "ADD TO SHOPING LIST";
                     button_shoping_list.addEventListener('click', function () {
-                        shoping_list((data_length), (data), (diners));
+                        shoping_list((component_length), (data), (diners));
                     })
                     div_add_to_shoping_list.appendChild(button_shoping_list);
 
@@ -255,20 +255,10 @@ function print_data(id) {
                 .catch(error => {
                     console.error('Error:', error);
                 });
-
-            // כאשר המשתמש ילחץ על כפתור הלייק שמסומן עם לב ( השתמש ב HTML Entities או בפונטים - לא בתמונות). כמו שמוצג בתמונה הוא התווסף לרשימת המועדפים של המשתמש - והיא תוצג בחלק העליון של המסך.
-
         })
         .catch(error => {
             console.error('Error:', error);
         });
-
-
-
-
-
-
-
 }
 
 

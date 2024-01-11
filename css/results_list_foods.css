@@ -34,6 +34,11 @@
     margin: 0;
     font-family: Calibri;
 }
+ 
+.error{
+    text-align: center;
+    color:#f38e82;
 
+}
 
 

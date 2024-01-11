@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook</title>
-    <link rel="stylesheet" href="css/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/results_list_foods.css">
@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="css/my_shopping_list.css">
     <link rel="stylesheet" href="css/favorite.css">
 
-    <script src="./js/results_list_foods.js"></script>
-    <script src="./js/ingredients_of_the_recipe.js"></script>
-    <script src="./js/add_remove_diners.js"></script>
-    <script src="./js/my_shoping_list.js"></script>
-    <script src="./js/favorite.js"></script>
+    <script src="js/results_list_foods.js"></script>
+    <script src="js/ingredients_of_the_recipe.js"></script>
+    <script src="js/add_remove_diners.js"></script>
+    <script src="js/my_shoping_list.js"></script>
+    <script src="js/see_favorite.js"></script>
+    <script src="js/my_shoping_list2.js"></script>
 
 </head>
 
@@ -43,7 +44,7 @@
         </div>
 
         <div class="favorite_container">
-            <button class="button_favorite_food" id="button_favorite_food">
+            <button class="button_favorite_food" id="button_favorite_food" onclick="print_favorite(arr_favorite)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="heart-fill"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -63,7 +64,11 @@
         </div>
         <div class="my_shopping_list" id="my_shopping_list"></div>
     </div>
-    
+
+    <script>
+        var arr_favorite = [];
+    </script>
+
 </body>
 
 </html>
