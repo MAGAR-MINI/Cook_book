@@ -6,7 +6,7 @@ function print_favorite(arr_favorite) {
     favorite_food.className = "favorite_food";
     //favorite_food.id = arr_favorite.length;
     document.body.appendChild(favorite_food);
-
+// test
     for (var i = 0; i < arr_favorite.length; i++) {
 
         //יצירת תגית כללית למאכל
